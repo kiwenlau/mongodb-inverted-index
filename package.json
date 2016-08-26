@@ -1,0 +1,29 @@
+{
+    "name": "mongodb-inverted-index",
+    "version": "1.0.0",
+    "description": "create inverted index on mongodb",
+    "dependencies":
+    {
+        "mongoose": "^4.5.10",
+        "underscore": "^1.8.3"
+    },
+    "repository":
+    {
+        "type": "git",
+        "url": "git+https://github.com/kiwenlau/mongodb-inverted-index.git"
+    },
+    "keywords": [
+        "mongodb",
+        "inverted",
+        "index",
+        "mapreduce",
+        "aggregate"
+    ],
+    "author": "kiwenlau",
+    "license": "ISC",
+    "bugs":
+    {
+        "url": "https://github.com/kiwenlau/mongodb-inverted-index/issues"
+    },
+    "homepage": "https://github.com/kiwenlau/mongodb-inverted-index#readme"
+}
