@@ -27,13 +27,14 @@ o.reduce = function(k, vals)
     };
 };
 
-Movie.mapReduce(o, function(err, results)
+Movie.mapReduce(o).exec(function(err, results)
 {
     if (err)
     {
         console.log(err);
         process.exit(1);
     }
+    console.log("create inverted index success:\n");
     console.log(JSON.stringify(results, null, 4));
     process.exit(0);
 });
