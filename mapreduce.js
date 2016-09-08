@@ -3,10 +3,6 @@ var Movie = require("./mongodb.js");
 
 var o = {};
 
-o.scope = {
-    _: _
-};
-
 o.map = function()
 {
     var movie = this.movie;
@@ -21,7 +17,11 @@ o.map = function()
 
 o.reduce = function(k, vals)
 {
-    var movieList = _.flatten(_.pluck(vals, "movieList"));
+    var movieList = [];
+    vals.forEach(function(val)
+    {
+        movieList.push(val.movieList[0]);
+    });
     return {
         movieList: movieList
     };
@@ -29,8 +29,11 @@ o.reduce = function(k, vals)
 
 Movie.mapReduce(o, function(err, results)
 {
-	if (err) {
-		console.log(err);
-	}
+    if (err)
+    {
+        console.log(err);
+        process.exit(1);
+    }
     console.log(JSON.stringify(results, null, 4));
+    process.exit(0);
 });
