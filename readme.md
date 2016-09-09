@@ -13,19 +13,25 @@ There are two different ways to created inverted index on MongoDB: [MapReduce](h
 
 
 
-#####2. save test data in mongodb
+#####2. save movie data in mongodb
 
 ```
 node save.js
 ```
 
-#####3. create inverted index using mapreduce
+#####3. search movie by start name without inverted index
+
+```
+node save.js
+```
+
+#####4. create inverted index using mapreduce
 
 ```
 node mapreduce.js
 ```
 
-#####4. create inverted index using mapreduce
+#####5. create inverted index using mapreduce
 
 ```
 node aggregation.js
