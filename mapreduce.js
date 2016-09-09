@@ -1,4 +1,3 @@
-var _ = require("underscore");
 var Movie = require("./mongodb.js");
 
 var o = {};
@@ -27,7 +26,7 @@ o.reduce = function(k, vals)
     };
 };
 
-Movie.mapReduce(o).exec(function(err, results)
+Movie.mapReduce(o, function(err, results)
 {
     if (err)
     {

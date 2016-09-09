@@ -21,7 +21,7 @@ Movie.aggregate([
         "star": "$_id",
         "movieList": 1
     }
-}]).exec(function(err, results)
+}], function(err, results)
 {
     if (err)
     {
