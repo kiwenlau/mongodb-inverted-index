@@ -13,14 +13,6 @@ Movie.aggregate([
             "$push": "$movie"
         }
     }
-},
-{
-    "$project":
-    {
-        "_id": 0,
-        "star": "$_id",
-        "movieList": 1
-    }
 }], function(err, results)
 {
     if (err)
