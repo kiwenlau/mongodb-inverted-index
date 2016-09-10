@@ -1,8 +1,8 @@
 var Movie = require("./mongodb.js");
 
-var o = {};
+var option = {};
 
-o.map = function()
+option.map = function()
 {
     var movie = this.movie;
     this.starList.forEach(function(star)
@@ -14,19 +14,19 @@ o.map = function()
     });
 };
 
-o.reduce = function(k, vals)
+option.reduce = function(key, values)
 {
     var movieList = [];
-    vals.forEach(function(val)
+    values.forEach(function(value)
     {
-        movieList.push(val.movieList[0]);
+        movieList.push(value.movieList[0]);
     });
     return {
         movieList: movieList
     };
 };
 
-Movie.mapReduce(o, function(err, results)
+Movie.mapReduce(option, function(err, results)
 {
     if (err)
     {
